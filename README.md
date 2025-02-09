@@ -28,7 +28,7 @@ Here's an overview of the project files:
 
 ## Installation Requirements
 
-To get started with WakeUpCV, ensure you have the following installed:
+To get started with nightOwl, ensure you have the following installed:
 
 - **Python 3.x** – The backbone of our solution.
 - **Flask** – Provides a robust, lightweight web interface.
