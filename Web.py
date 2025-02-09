@@ -1,4 +1,5 @@
-# app.py
+# This version of model is AI Generated, main.py is the my main idea and main project, I tried this to give it a UI.
+# Still looking for a Web Developer to help me in this!
 from flask import Flask, render_template_string, Response, jsonify, request
 import cv2
 import time
