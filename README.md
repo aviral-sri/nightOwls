@@ -17,9 +17,6 @@ Here's an overview of the project files:
 - **README.md**  
   This documentation file that provides an overview and instructions for the project.
 
-- **Untitled.ipynb**  
-  A Jupyter Notebook used for prototyping and testing the detection algorithms.
-
 - **Web.py**  
   The main Flask application that powers the real-time web interface for video processing.
 
