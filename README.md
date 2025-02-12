@@ -21,9 +21,6 @@ Here's an overview of the project files:
 - **Web.py**  
   The main Flask application that powers the real-time web interface for video processing.
 
-- **beep.wav**  
-  Audio file used as the alert sound when the detection criteria are met.
-
 - **main.py**  
   The primary entry point for the application, orchestrating detection routines and module interactions.
 
