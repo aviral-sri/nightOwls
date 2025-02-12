@@ -1,8 +1,9 @@
 # nightOwl-ML-
 A model that helps you work all night!
 
+Night Owl is a desktop alertness monitoring application that uses OpenCV for face and eye detection through your webcam. It offers interactive mode selection (normal and hazard) with customizable audio alerts to ensure you're awake and attentive.
+Note: We're continuously enhancing Night Owl for better accessibility and more features!
 
-WakeUpCV is your next-generation solution for real-time eye and face detection. Engineered with Flask and OpenCV, this product leverages classical machine learning techniques—using Haar Cascades and Canny Edge Detection—to monitor user alertness efficiently and reliably. Whether you're enhancing driver safety or improving security, WakeUpCV transforms your webcam feed into a dynamic, intelligent monitoring system.
 
 ## File Structure
 
