@@ -1,0 +1,105 @@
+/* static/style.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  /* Stop button styling */
+  .stop-btn {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .stop-btn:hover {
+    background-color: #e60000;
+  }
+  
+  /* Toggle switches */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    margin: 0 5px;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 28px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px; width: 22px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  .toggle-label {
+    margin-left: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Camera feed container */
+  #cameraFeed {
+    width: 640px;
+    height: 360px;
+    background-color: #000;
+    color: #fff;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Adjust the actual <img> for the feed */
+  #cameraFeed img {
+    width: 640px;
+    height: 360px;
+    object-fit: cover;
+  }
+  
+  #status {
+    font-weight: bold;
+    color: #555;
+  }
+  
