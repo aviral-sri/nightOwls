@@ -47,7 +47,7 @@ NightOwl-ML- is a desktop application designed to monitor user alertness by dete
 
 To see NightOwl-ML- in action, check out the following video demonstration:
 
-[![NightOwl-ML- Video Demo]([https://img.youtube.com/vi/VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID_HERE](https://youtu.be/M7FSG336X7U))
+[![NightOwl-ML- Video Demo](https://youtu.be/M7FSG336X7U)
 
 
 ## File Structure
