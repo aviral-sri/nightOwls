@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drowsiness Detector</title>
+</head>
+<body>
+    <h1>Night Owls</h1>
+    <div>
+        <label>Danger Mode: <input type="checkbox" id="dangerModeToggle"></label>
+        <label>Sound On: <input type="checkbox" id="soundToggle" checked></label>
+        <button id="actionBtn">Start System</button>
+    </div>
+    <div id="status"></div>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
