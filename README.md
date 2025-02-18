@@ -1,34 +1,82 @@
-# nightOwl-ML-
-A model that helps you work all night!
+# NightOwl-ML-
 
-Night Owl is a desktop alertness monitoring application that uses OpenCV for face and eye detection through your webcam. It offers interactive mode selection (normal and hazard) with customizable audio alerts to ensure you're awake and attentive.
-Note: We're continuously enhancing Night Owl for better accessibility and more features!
+NightOwl-ML- is a desktop application designed to monitor user alertness by detecting facial and eye movements through your webcam. Utilizing OpenCV and pre-trained Haar Cascade models, it offers interactive modes with customizable audio alerts to help users stay attentive during late-night work sessions.
+
+## Features
+
+- **Real-Time Monitoring**: Continuously analyzes webcam feed to detect drowsiness.
+- **Mode Selection**: Choose between 'Normal' and 'Hazard' modes based on your alertness needs.
+- **Customizable Alerts**: Set personalized audio alerts to prompt you when signs of drowsiness are detected.
+- **User-Friendly Interface**: Simple and intuitive design for ease of use.
+
+## Installation
+
+### Prerequisites
+
+- Python 3.6 or higher
+- pip (Python package installer)
+
+### Setup Instructions
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/aviral-sri/nightOwl-ML-.git
+   cd nightOwl-ML-
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Application**:
+   ```bash
+   python main.py
+   ```
+
+   This will launch the NightOwl-ML- interface.
+
+## Usage
+
+1. **Launch the Application**: Run `main.py` to start the interface.
+2. **Select Mode**: Choose between 'Normal' or 'Hazard' mode based on your preference.
+3. **Start Monitoring**: Click on 'Start' to begin real-time alertness monitoring.
+4. **Customize Alerts**: Navigate to settings to adjust audio alerts as per your liking.
+
+## Video Demo
+
+To see NightOwl-ML- in action, check out the following video demonstration:
+
+[![NightOwl-ML- Video Demo]([https://img.youtube.com/vi/VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID_HERE](https://youtu.be/M7FSG336X7U))
 
 
 ## File Structure
 
-Here's an overview of the project files:
+- `H_Eye.xml`: Pre-trained Haar Cascade model for eye detection.
+- `H_Face.xml`: Pre-trained Haar Cascade model for face detection.
+- `main.py`: Primary script to run the application.
+- `app.py`: Flask application for real-time video processing.
+- `templates/`: Directory containing HTML templates for the Flask app.
+- `static/`: Directory for static files (CSS, JS, images).
+- `README.md`: This documentation file.
 
-- **H_Eye.xml**  
-  Pre-trained Haar Cascade model used for detecting eyes.
+## Contributing
 
-- **H_Face.xml**  
-  Pre-trained Haar Cascade model used for detecting faces.
+Contributions are welcome! To contribute:
 
-- **README.md**  
-  This documentation file that provides an overview and instructions for the project.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
 
-- **Web.py**  
-  The main Flask application that powers the real-time web interface for video processing.
+## License
 
-- **main.py**  
-  The primary entry point for the application, orchestrating detection routines and module interactions.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Installation Requirements
+## Acknowledgements
 
-To get started with nightOwl, ensure you have the following installed:
+- [OpenCV](https://opencv.org/) for the computer vision library.
+- [Flask](https://flask.palletsprojects.com/) for the web framework.
 
-- **Python 3.x** – The backbone of our solution.
-- **Flask** – Provides a robust, lightweight web interface.
-- **opencv-python** – Powers the computer vision operations.
-- **numpy** – Enables efficient numerical computations.
+
