@@ -1,105 +1,92 @@
-/* static/style.css */
-body {
+/* Import a futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* Reset and basic styling */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  .controls {
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(-45deg, #141414, #0d0d0d, #141414, #0d0d0d);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    min-height: 100vh;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+h1 {
+    font-size: 3rem;
+    color: #00eaff;
+    text-shadow: 0 0 15px #00eaff;
+    margin-bottom: 30px;
+}
+
+/* Control Panel Styling */
+.controls {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
     gap: 20px;
-  }
-  
-  /* Stop button styling */
-  .stop-btn {
-    background-color: #ff4c4c;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
+    margin-bottom: 30px;
+}
+label {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+}
+label input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+button {
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 2px solid #00eaff;
+    color: #00eaff;
     border-radius: 5px;
     cursor: pointer;
-  }
-  .stop-btn:hover {
-    background-color: #e60000;
-  }
-  
-  /* Toggle switches */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
-    margin: 0 5px;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 28px;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 22px; width: 22px;
-    left: 3px; bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  input:checked + .slider:before {
-    transform: translateX(22px);
-  }
-  .toggle-label {
-    margin-left: 5px;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  
-  /* Camera feed container */
-  #cameraFeed {
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover {
+    background: #00eaff;
+    color: #141414;
+    box-shadow: 0 0 15px #00eaff;
+}
+
+/* Status Display Styling */
+#status {
     width: 640px;
-    height: 360px;
-    background-color: #000;
-    color: #fff;
-    margin: 0 auto 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Adjust the actual <img> for the feed */
-  #cameraFeed img {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px #00eaff;
+}
+
+/* Video Feed Styling */
+img {
     width: 640px;
-    height: 360px;
-    object-fit: cover;
-  }
-  
-  #status {
-    font-weight: bold;
-    color: #555;
-  }
-  
+    height: 480px;
+    border: 5px solid #00eaff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00eaff;
+}
