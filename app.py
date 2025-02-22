@@ -16,9 +16,8 @@ def start_system():
     hazard_mode = data.get('dangerMode', False)
     sound_on = data.get('soundOn', True)
 
-    # Stop existing detection if running
     drowsiness_detector.stop_detection()
-    # Start new thread
+   
     thread = threading.Thread(target=drowsiness_detector.start_detection, 
                             kwargs={'hazard_on': hazard_mode, 'sound_on': sound_on})
     thread.start()
@@ -40,7 +39,7 @@ def gen_frames():
                     frame = np.zeros((480, 640, 3), dtype=np.uint8)
         else:
             frame = np.zeros((480, 640, 3), dtype=np.uint8)
-            cv2.putText(frame, "System Inactive", (50, 240), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.putText(frame, "System Inactive", (100, 240), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
 
         ret, buffer = cv2.imencode('.jpg', frame)
         yield (b'--frame\r\nContent-Type: image/jpeg\r\n\r\n' + buffer.tobytes() + b'\r\n')
