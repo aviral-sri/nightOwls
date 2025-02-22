@@ -27,7 +27,7 @@ class DrowsinessDetector:
 
         # Initialize pygame for sound
         pygame.mixer.init()
-        self.beep_sound = pygame.mixer.Sound('static/beep.wav')
+        
 
         # Camera initialized on start_detection
         self.cap = None
@@ -36,10 +36,10 @@ class DrowsinessDetector:
         self.beep_playing = False
 
     def notify(self):
-        account_sid = "Auth ID" 
-        auth token = "Auth Token" 
-        twilio_number "Given Phone Number" 
-        recipient_number = "Recipient Number"
+        account_sid = "sid"
+        auth_token = "token"
+        twilio_number = "t_no" 
+        recipient_number = "+r_no"  
 
         client = Client(account_sid, auth_token)
 
@@ -53,12 +53,14 @@ class DrowsinessDetector:
 
 
     def trigger_beep(self):
+        self.beep_sound = pygame.mixer.Sound('static/beep.wav')
         if self.sound_on and not self.beep_playing:
             self.beep_playing = True
             self.beep_sound.play()
             threading.Timer(self.beep_sound.get_length(), self.reset_beep).start()
 
     def trigger_beep_loud(self):
+        self.beep_sound = pygame.mixer.Sound('static/beep_loud.wav')
         if self.sound_on and not self.beep_playing:
             self.beep_playing = True
             self.beep_sound.set_volume(min(1.0, self.beep_sound.get_volume() * 2))
@@ -92,7 +94,7 @@ class DrowsinessDetector:
                     roi_gray = gray[y:y+h//2, x:x+w]
                     eyes = self.eye_cascade.detectMultiScale(roi_gray, 1.3, 5)
 
-                    if len(eyes) >= 2:
+                    if len(eyes) >= 1:
                         eyes_detected = True
                         self.last_eye_detection = time.time()
 
