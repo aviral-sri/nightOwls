@@ -5,6 +5,7 @@ import pygame
 import pywhatkit
 import numpy as np
 from twilio.rest import Client
+import time
 
 class DrowsinessDetector:
     def __init__(self):
@@ -15,7 +16,7 @@ class DrowsinessDetector:
         self.last_eye_detection = time.time()
         self.ALARM_DURATION = 2
         self.HAZARD_DURATION = 4
-        self.DANGER_DURATION = 7
+        self.DANGER_DURATION = 10
         self.detection_active = False
         self.latest_frame = None
         self.frame_lock = threading.Lock()
@@ -35,10 +36,10 @@ class DrowsinessDetector:
         self.beep_playing = False
 
     def notify(self):
-        account_sid = "Auth ID"
-        auth_token = "Auth Token"
-        twilio_number = "Given Phone Number" 
-        recipient_number = "Recipient Number"  
+        account_sid = "Auth ID" 
+        auth token = "Auth Token" 
+        twilio_number "Given Phone Number" 
+        recipient_number = "Recipient Number"
 
         client = Client(account_sid, auth_token)
 
@@ -69,11 +70,13 @@ class DrowsinessDetector:
         self.hazard_on = hazard_on
         self.sound_on = sound_on
         self.detection_active = True
+    
 
         # Initialize camera
         if not self.cap or not self.cap.isOpened():
             self.cap = cv2.VideoCapture(0)
-
+            start = time.time() 
+            notification_sent = False
             while self.detection_active:
                 ret, frame = self.cap.read()
                 if not ret or frame is None:
@@ -100,10 +103,14 @@ class DrowsinessDetector:
 
                 elapsed = time.time() - self.last_eye_detection
                 if self.hazard_on:
-                    if elapsed > self.DANGER_DURATION:
-                        cv2.putText(frame, "Notification Sent!", (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                    
+                    if elapsed > self.DANGER_DURATION and (time.time() - start)> 8 :
+                        cv2.putText(frame, "Notification Sent!, now you have to restart the system.", (10, 90),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                         self.trigger_beep_loud()
-                        self.notify()
+                        if not notification_sent:
+                            self.notify()
+                            notification_sent = True
                     if elapsed > self.HAZARD_DURATION:
                         cv2.putText(frame, "DANGER!", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                         self.trigger_beep_loud()
