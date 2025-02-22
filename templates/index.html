@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Drowsiness Detector</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <title>NIGHT OWLS</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Night Owls</h1>
-    <div class="controls">
-        <label>Danger Mode: <input type="checkbox" id="dangerModeToggle"></label>
-        <label>Sound On: <input type="checkbox" id="soundToggle" checked></label>
-        <button id="actionBtn">Start System</button>
+  <input type="checkbox" id="dangerModeToggle">
+  <label for="dangerModeToggle" class="danger-mode-label">Danger Mode</label>
+
+
+  </label>
+  <div class="container">
+    <div class="side-section" id="problem-desktop">
+      <h2>Problem</h2>
+      <p>
+        Fatigue affects drivers on long trips, students studying late, and workers burning the midnight oil. Lack of sleep and extended focus lead to slowed reactions, reduced alertness, and higher risk of errors or accidents. Whether it’s someone behind the wheel on a highway or a person struggling to stay awake at a desk, drowsiness can cause costly mistakes, injuries, or worse.
+      </p>
     </div>
-    <div id="status">System Idle</div>
-    <img src="{{ url_for('video_feed') }}" alt="Live Video Feed">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <div class="content">
+      <h1 id="neonHeading" class="neon-heading neon-off">Night Owls</h1>
+      <div class="controls">
+        <input type="checkbox" id="soundToggle">
+        <label for="soundToggle" class="sound-btn"></label>
+        <button id="actionBtn">Start System</button>
+      </div>
+      <div id="status">System Inactive</div>
+      <img src="{{ url_for('video_feed') }}" alt="Live Video Feed" id = "vid">
+    </div>
+    <div class="side-section" id="usage-desktop">
+      <h2>Solution</h2>
+      <p>
+        Simply start the system to begin real-time monitoring. Customize alerts,
+        and if drowsiness is detected, the system issues visual and audible notifications,
+        even escalating when needed. This helps prevent accidents.
+      </p>
+    </div>
+  </div>
+  <a href="https://github.com/aviral-sri/nightOwl-ML-" target="_blank" class="desktop-bottom-button">Get Source Code</a>
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
