@@ -22,8 +22,8 @@ class DrowsinessDetector:
         self.frame_lock = threading.Lock()
 
         # Load Haar Cascades
-        self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-        self.eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
+        self.face_cascade = cv2.CascadeClassifier('H_Face.xml')
+        self.eye_cascade = cv2.CascadeClassifier('H_Eye.xml')
 
         # Initialize pygame for sound
         pygame.mixer.init()
@@ -36,21 +36,21 @@ class DrowsinessDetector:
         self.beep_playing = False
 
     def notify(self):
-        account_sid = "sid"
-        auth_token = "token"
-        twilio_number = "t_no" 
-        recipient_number = "+r_no"  
+        # account_sid = "sid"
+        # auth_token = "token"
+        # twilio_number = "t_no" 
+        # recipient_number = "+r_no"  
 
-        client = Client(account_sid, auth_token)
+        # client = Client(account_sid, auth_token)
 
-        message = client.messages.create(
-            from_=twilio_number,
-            body="Driver is falling asleep!!",
-            to=recipient_number
-        )
+        # message = client.messages.create(
+        #     from_=twilio_number,
+        #     body="Driver is falling asleep!!",
+        #     to=recipient_number
+        # )
 
-        print("Message sent! SID:", message.sid)
-
+        # print("Message sent! SID:", message.sid)
+        print("Message sent! SID:")
 
     def trigger_beep(self):
         self.beep_sound = pygame.mixer.Sound('static/beep.wav')
@@ -92,7 +92,7 @@ class DrowsinessDetector:
                 for (x, y, w, h) in faces:
                     cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
                     roi_gray = gray[y:y+h//2, x:x+w]
-                    eyes = self.eye_cascade.detectMultiScale(roi_gray, 1.3, 5)
+                    eyes = self.eye_cascade.detectMultiScale(roi_gray, 1.3, 3)
 
                     if len(eyes) >= 1:
                         eyes_detected = True
