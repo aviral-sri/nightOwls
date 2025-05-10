@@ -20,7 +20,7 @@ NightOwl-ML- is a desktop application designed to monitor user alertness by dete
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/aviral-sri/nightOwl-ML-.git
+   git clone https://github.com/aviral-sri/nightOwls-.git
    cd nightOwl-ML-
    ```
 
@@ -43,11 +43,6 @@ NightOwl-ML- is a desktop application designed to monitor user alertness by dete
 3. **Start Monitoring**: Click on 'Start' to begin real-time alertness monitoring.
 4. **Customize Alerts**: Navigate to settings to adjust audio alerts as per your liking.
 
-## Video Demo
-
-To see NightOwl-ML- in action, check out the following video demonstration:
-
-(https://youtu.be/M7FSG336X7U)
 
 
 ## File Structure
